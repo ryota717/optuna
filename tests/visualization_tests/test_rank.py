@@ -350,10 +350,9 @@ def test_generate_rank_plot_for_few_observations(params: list[str]) -> None:
     study.add_trial(
         create_trial(
             values=[0.0],
-            params={"param_a": 1.0, "param_b": 2.0},
+            params={"param_a": 1.0},
             distributions={
                 "param_a": FloatDistribution(0.0, 3.0),
-                "param_b": FloatDistribution(0.0, 3.0),
             },
         )
     )
@@ -375,7 +374,7 @@ def test_generate_rank_plot_for_few_observations(params: list[str]) -> None:
         ),
         "param_b": _AxisInfo(
             name="param_b",
-            range=(-0.1, 2.1),
+            range=(0.0, 0.0),
             is_log=False,
             is_cat=False,
         ),
